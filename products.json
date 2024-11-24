@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Barbarian Jersey",
+        "price": 120,
+        "image": "images/jersey1.jpg",
+        "stock": 10
+      },
+      {
+        "id": 2,
+        "name": "Ireland Rugby Jersey",
+        "price": 130,
+        "image": "images/jersey2.jpg",
+        "stock": 5
+      }
+]

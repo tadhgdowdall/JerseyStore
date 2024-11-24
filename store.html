@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportsy Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="icon" type="image/x-icon" href="images/Designer.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+
+
+</head>
+<body class="bg-dark ">
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+        <div class="container-fluid">
+          <img src="images/Designer.png" alt="" class="myLogo">
+    
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navbar Links -->
+            <ul class="navbar-nav ms-auto w-100 d-flex justify-content-start ">
+              <li class="nav-item m-0 p-0">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item m-0 p-0">
+                <a class="nav-link" href="store.html">Store</a>
+              </li>
+              <li class="nav-item m-0 p-0">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+    
+           
+            </ul>
+          
+            <form class="d-flex w-auto  ">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+      
+            <div class="cart">
+                <a href="cart.html" style="text-decoration: none;">
+                  <span class="cart-icon fa fa-shopping-cart cart" style="font-size:48px;color:darkgrey;"></span>
+                </a>
+                <span class="cart-count" style="color:white;" id="cart-count">0</span>
+              </div>
+        </div>
+      </nav>
+          
+
+      <h1 class="storeHeading">Store</h1>
+
+      <!-- Card for store -->
+      <div class="container">
+        <div class="card mb-3 cardContainer" style="width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="images/jersey.jpg" class="img-fluid rounded-start" alt="Jersey">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Barbarian Jersey</h5>
+                <p class="card-text">Barbarians Rugby in partnership with Macron, have revealed their new ‘Home’ jersey as part of their kit launch for the 2023/24 season. The design of the new ‘Home’ jersey features a colour-blocking pattern across the body
+
+                    .</p>
+                    <p class="jerseyPrice"><b>€90</b></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <a href="#" id="addToCartButton" class="btn btn-primary d-flex justify-content-center add-to-cart m-0">Add To Cart</a>
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <!-- Card 2-->
+    <div class="container">
+        <div class="card mb-3 cardContainer" style="width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="images/jersey2.jpg" class="img-fluid rounded-start" alt="Jersey">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Barbarian Jersey</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="jerseyPrice">€90</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                <a href="#" id="addToCartButton" class="btn btn-primary d-flex justify-content-center add-to-cart m-0">Add To Cart</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+  <!-- Card 3 -->
+<div class="container">
+    <div class="card mb-3 cardContainer" style="width: 100%;">
+      <div class="row g-0">
+        <!-- Left Column with Carousel -->
+        <div class="col-md-4">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/jersey3.jpg" class="img-fluid rounded-start" alt="Jersey">
+              </div>
+              <div class="carousel-item">
+                <img src="images/jersey2.jpg" class="img-fluid rounded-start" alt="Jersey">
+              </div>
+              <div class="carousel-item">
+                <img src="images/jersey.jpg" class="img-fluid rounded-start" alt="Jersey">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </a>
+          </div>
+        </div>
+        <!-- Right Column with Card Content -->
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Barbarian Jersey</h5>
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            </p>
+            <p class="jerseyPrice">€90</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <a href="#" id="addToCartButton" class="btn btn-primary d-flex justify-content-center add-to-cart m-0">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+       <!-- Footer -->
+       <footer class="bg-dark bg-gradient mt-3 text-white pt-4  footerNav">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            
+        
+            
+            <!-- Links Section   You need to fix responsiveness on small screens-->
+            <div class="col-12 col-md-4 mb-4 footerLinks">
+          
+              <ul class="footer-text  ">
+                <li><a href="index.html" class="text-white">Home</a></li>
+                <li><a href="store.html" class="text-white">Store</a></li>
+                <li><a href="contact.html" class="text-white">Contact</a></li>
+              </ul>
+            </div>
+            
+          
+          </div>
+
+          <!-- Bottom Row with Copyright -->
+          <div class="text-center py-3">
+            <p class="mb-0">&copy; 2024 Sportsy. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
