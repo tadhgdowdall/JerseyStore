@@ -1,16 +1,23 @@
 [
+  {
+      "id": 1,
+      "name": "Barbarian Jersey",
+      "price": 120,
+      "image": "images/jersey.jpg",
+      "stock": 10
+    },
     {
-        "id": 1,
-        "name": "Barbarian Jersey",
-        "price": 120,
-        "image": "images/jersey1.jpg",
-        "stock": 10
-      },
-      {
-        "id": 2,
-        "name": "Ireland Rugby Jersey",
-        "price": 130,
-        "image": "images/jersey2.jpg",
-        "stock": 5
-      }
+      "id": 2,
+      "name": "Ireland Rugby Jersey",
+      "price": 130,
+      "image": "images/jersey2.jpg",
+      "stock": 5
+    },
+    {
+      "id": 3,
+      "name": "Ireland Rugby Jersey",
+      "price": 180,
+      "image": "images/jersey3.jpg",
+      "stock": 1
+    }
 ]

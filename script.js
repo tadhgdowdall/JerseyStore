@@ -36,14 +36,44 @@ function changeJerseyPrice () {
 changeJerseyPrice();
 
 
-// fetching data from json
 
+// the following code is testing how to use json and implement it into the store
+
+// fetching data from json
+// Fetch the product data from the JSON file
 fetch('products.json')
   .then(response => response.json())
-  .then(data => {
-    data.forEach(product => {
-      // Add product to the page dynamically
-      console.log(product.name, product.price);
+  .then(products => {
+    const productCardsContainer = document.getElementById('productCards');
+    
+    products.forEach(product => {
+      // Create the card for each product
+      const cardHTML = `
+        <div class="col-md-6">
+          <div class="card mb-3 cardContainer">
+            <div class="row g-0">
+              <!-- Left Column with Image -->
+              <div class="col-md-4">
+                <img src="${product.image}" class="img-fluid rounded-start" alt="${product.name}">
+              </div>
+              <!-- Right Column with Card Content -->
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text">
+                    Available stock: ${product.stock}
+                  </p>
+                  <p class="jerseyPrice">€${product.price}</p>
+                  <a href="#" class="btn btn-primary d-flex justify-content-center add-to-cart">Add To Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Append the card to the container
+      productCardsContainer.innerHTML += cardHTML;
     });
   })
-  .catch(error => console.error('Error loading JSON:', error));
+  .catch(error => console.error('Error fetching the product data:', error));
