@@ -85,8 +85,9 @@
 
   .cart{
     padding:10px;
-    margin:10px;
+    margin:0px;
     text-align: center;
+
     
   }
 
@@ -138,6 +139,15 @@
 
 
 
-  /* Cart CSS */
+  .badge {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-size:0.5em;
+  }
 
   
