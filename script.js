@@ -48,7 +48,7 @@ fetch('products.json')
     
     products.forEach(product => {
       // Create the card for each product
-      const cardHTML = `
+      const cardHTML = ` ${product.id}
         <div class="col-md-6" style="width: 100%;">
           <div class="card mb-3 cardContainer">
             <div class="row g-0">
