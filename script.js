@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to add an item to the cart
   function addToCart(event) {
-    event.preventDefault(); // Prevent default link behavior
+
 
     const button = event.target; // Get the clicked button
     const productId = button.dataset.id; // Extract product ID
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Display total price
-    cartTotalContainer.innerHTML = `<h4>Total: €${total.toFixed(2)}</h4>`;
+    cartTotalContainer.innerHTML = `<h4 >Total: €${total.toFixed(2)}</h4>`;
 
     // Add event listeners for "Remove" buttons
     const removeButtons = document.querySelectorAll('.remove-from-cart');
