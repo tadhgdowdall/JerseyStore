@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loop through cart items and create HTML for each item
     cart.forEach((item) => {
       const cartItemHTML = `
-      <div class="col-md-6" style="width: 100%;">
+      <div class="col-md-4" style="width: 100%;">
         <div class="card mb-3 cardContainer">
           <div class="row g-0">
             <div class="col-md-4">
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Display total price
-    cartTotalContainer.innerHTML = `<h4 >Total: €${total.toFixed(2)}</h4>`;
+    cartTotalContainer.innerHTML = `<h4 style="margin-left:3.2em; padding:0;">Total: €${total.toFixed(2)}</h4>`;
 
     // Add event listeners for "Remove" buttons
     const removeButtons = document.querySelectorAll('.remove-from-cart');
