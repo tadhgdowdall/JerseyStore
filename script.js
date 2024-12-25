@@ -196,4 +196,55 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load cart from localStorage on page load
   loadCartFromLocalStorage();
   updateCartUI(); // Ensure cart UI is updated on load
+
+
+
+
+// Following code is for the sign up 
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+
+
+  const email = document.getElementById('Email');
+const password = document.getElementById('password');
+
+
+});
+// Fetch the users JSON file
+fetch('users.json')
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Failed to load users.json');
+  }
+  return response.json();
+})
+.then(users => {
+  // Check if the email and password match a user in the JSON data
+  const user = users.find(user => user.email === email && user.password === password);
+
+
+  if (user) {
+    // Login successful
+    document.getElementById('message').textContent = `Welcome, ${user.email}!`;
+    document.getElementById('message').style.color = 'green';
+
+    // Simulate login by saving the user in sessionStorage (optional)
+    sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+
+    console.log(user.email);
+    console.log(user.password);
+
+    // Redirect to another page (optional)
+    window.location.href = 'index.html';
+  } else {
+    // Login failed
+    document.getElementById('message').textContent = 'Invalid email or password!';
+    document.getElementById('message').style.color = 'red';
+  }
+})
+.catch(error => {
+  console.error('Error:', error);
+  document.getElementById('message').textContent = 'An error occurred. Please try again later.';
+  document.getElementById('message').style.color = 'red';
+
+  });
 });
