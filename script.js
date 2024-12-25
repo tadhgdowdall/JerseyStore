@@ -169,8 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add event listeners for "Remove" buttons
     const removeButtons = document.querySelectorAll('.remove-from-cart');
-    const checkOutBtn = document.querySelectorAll('.check-out-cart');
-  
+
 
     removeButtons.forEach((button) => {
       button.addEventListener('click', removeFromCart);
