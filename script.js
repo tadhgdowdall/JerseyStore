@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </p> 
                 <p class="jerseyPrice">€${item.price}</p>
                 <button class="btn btn-danger remove-from-cart" data-id="${item.id}">Remove</button>
+               <a href="checkoutPage.html" style="padding:0; margin:0;"> <button class="btn btn-success check-out-cart" data-id="${item.id}">Checkout</button> </a>
               </div>
             </div>
           </div>
@@ -168,6 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add event listeners for "Remove" buttons
     const removeButtons = document.querySelectorAll('.remove-from-cart');
+    const checkOutBtn = document.querySelectorAll('.check-out-cart');
+  
+
     removeButtons.forEach((button) => {
       button.addEventListener('click', removeFromCart);
     });
