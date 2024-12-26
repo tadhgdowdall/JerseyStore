@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   let cart = []; // Store cart items
 
+
+
   // Load cart from localStorage on page load
   function loadCartFromLocalStorage() {
     const savedCart = localStorage.getItem('cart');
@@ -74,6 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     })
     .catch((error) => console.error('Error fetching product data:', error));
+
+
+ // Checking if the cart is empty. if it is empty im inputting a card container
+ const emptyCartContainer = document.getElementById('emptyCartContainer')
+ const emptyCartHTML = `
+ <div class="d-flex justify-content-center align-items-center" style="">
+   <div class="card" style="width: 18rem;">
+     <span class="cart-icon bi bi-bag" style="font-size:30px; color:white;"></span>
+     <div class="card-body">
+       <h5 class="card-title">Your cart is empty</h5>
+       <p class="card-text">Add some items to your cart to get started.</p>
+       <a href="store.html" class="btn btn-primary d-flex align-items-center">Go Shopping</a>
+     </div>
+   </div>
+ </div>`;
+
+  if(cart.length === 0){
+    emptyCartContainer.innerHTML += emptyCartHTML;
+    
+  }
 
   // Function to add an item to the cart
   function addToCart(event) {
