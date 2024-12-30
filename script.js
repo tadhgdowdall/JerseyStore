@@ -81,10 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
  // Checking if the cart is empty. if it is empty im inputting a card container
  const emptyCartContainer = document.getElementById('emptyCartContainer')
  const emptyCartHTML = `
- <div class="d-flex justify-content-center align-items-center" style="">
+ <div class="d-flex justify-content-center align-items-center m-5" style="">
    <div class="card" style="width: 18rem;">
-     <span class="cart-icon bi bi-bag" style="font-size:30px; color:white;"></span>
-     <div class="card-body">
+     <span class="cart-icon bi bi-bag d-flex justify-content-center align-items-center m-1 p-3" style="font-size:30px; color:black;"></span>
+     <div class="card-body text-center">
        <h5 class="card-title">Your cart is empty</h5>
        <p class="card-text">Add some items to your cart to get started.</p>
        <a href="store.html" class="btn btn-primary d-flex align-items-center">Go Shopping</a>
