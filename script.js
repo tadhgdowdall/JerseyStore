@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cart = [];
     }
     updateCartCount(); // Ensure cart count is updated on load
+    updateCartDisplay(cart);
   }
 
   // Save cart to localStorage
@@ -92,10 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
    </div>
  </div>`;
 
-  if(cart.length === 0){
-    emptyCartContainer.innerHTML += emptyCartHTML;
-    
+ function updateCartDisplay(cart) {
+  if (cart.length === 0) {
+    // If the cart is empty, display the empty cart card
+    if (!document.getElementById('emptyCartCard')) {
+      emptyCartContainer.innerHTML = emptyCartHTML;
+    }
+  } else {
+    // If the cart has items, remove the empty cart card if it exists
+    const emptyCartCard = document.getElementById('emptyCartCard');
+    if (emptyCartCard) {
+      emptyCartCard.remove();
+    }
   }
+}
+  
 
   // Function to add an item to the cart
   function addToCart(event) {
@@ -137,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update cart count
     updateCartCount();
+
 
     // Notify user
     alert(`${productName} added to the cart!`);
@@ -216,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 
     alert('Item removed from the cart!');
+    updateCartDisplay(cart);
   }
 
   // Load cart from localStorage on page load
@@ -294,5 +308,5 @@ async function login(email, password) {
   }
 }
 
-  
+
 });
