@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "Ireland Rugby Jersey",
+      "name": "Munster Rugby Jersey",
       "price": 130,
       "image": "images/jersey2.jpg",
       "description": "Munster Rugby, collaborating with Canterbury, has unveiled their vibrant new 'Away' jersey for the 2023/24 campaign. The striking red and white pattern is inspired by the team’s enduring legacy and relentless passion for the game.",
@@ -26,10 +26,26 @@
     },
     {
       "id": 4,
-      "name": "France Rugby Jersey",
-      "price": 140,
-      "image": "images/jersey3.jpg",
-      "description": "Barbarians Rugby in partnership with Macron, have revealed their new ‘Home’ jersey as part of their kit launch for the 2023/24 season. The design of the new ‘Home’ jersey features a colour-blocking pattern across the body.",
-      "stock": 1
+      "name": "Adidas Predator Boots",
+      "price": 180,
+      "image": "images/boots.jpg",
+      "description": "adidas Predator converts pressure into pinpoint accuracy. On the flexible HybridTouch 2.0 upper of these Elite football boots, grippy Strikeskin fins and a fold-over tongue help with precision shooting. An adidas PRIMEKNIT collar offers lockdown and the Controlframe 2.0 outsole keeps you stable on firm ground.",
+      "stock": 4
+    },
+    {
+      "id": 5,
+      "name": "Nike Mercurial Boots",
+      "price": 175,
+      "image": "images/nikeBoots.jpg",
+      "description": "Looking to take your speed to the next level? We made these Academy boots with an improved heel Air Zoom unit. It gives you the propulsive feel needed to break through the back line. The result is the most responsive Mercurial we've ever made, so you can dictate pace and tempo all match long.",
+      "stock": 4
+    },
+    {
+      "id": 6,
+      "name": "Ireland Rugby Jersey",
+      "price": 80,
+      "image": "images/irelandJersey.jpg",
+      "description": "Show strength in numbers. The Ireland Home Pro Jersey brings you closer to elite performance. Straight-fitting. Moisture-wicking. Dries quick.",
+      "stock": 4
     }
 ]

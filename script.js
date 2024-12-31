@@ -226,50 +226,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Following code is for the sign up 
+
 document.getElementById('loginForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the default form submission
 
+  // Get the email and password values from the form
+  const email = document.getElementById('Email').value;
+  const password = document.getElementById('password').value;
 
-  const email = document.getElementById('Email');
-const password = document.getElementById('password');
-
-
+  // Call the login function with the email and password
+  login(email, password);
 });
-// Fetch the users JSON file
-fetch('users.json')
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Failed to load users.json');
+
+// Define an async function for login
+async function login(email, password) {
+  try {
+    // Fetch the users JSON file
+    const response = await fetch('users.json');
+
+    // Check if the response is OK
+    if (!response.ok) {
+      throw new Error('Failed to load users.json');
+    }
+
+    // Parse the JSON data
+    const users = await response.json();
+
+    // Find the user by matching email and password
+    const user = users.find(user => user.email === email && user.password === password);
+
+    // Check if the user is found
+    if (user) {
+      // Login successful
+      const messageElement = document.getElementById('message');
+      if (messageElement) {
+        messageElement.textContent = `Welcome, ${user.email}!`;
+        messageElement.style.color = 'green';
+      } else {
+        console.error('Message element not found!');
+      }
+
+      // Save user info in sessionStorage (optional)
+      sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+
+      
+      window.location.href = 'index.html';
+    } else {
+      // Login failed
+      const messageElement = document.getElementById('message');
+      if (messageElement) {
+        messageElement.textContent = 'Invalid email or password!';
+        messageElement.style.color = 'red';
+      } else {
+        console.error('Message element not found!');
+      }
+    }
+  } catch (error) {
+    // Handle any errors
+    console.error('Error:', error);
+    const messageElement = document.getElementById('message');
+    if (messageElement) {
+      messageElement.textContent = 'An error occurred. Please try again later.';
+      messageElement.style.color = 'red';
+    } else {
+      console.error('Message element not found!');
+    }
   }
-  return response.json();
-})
-.then(users => {
-  // Check if the email and password match a user in the JSON data
-  const user = users.find(user => user.email === email && user.password === password);
+}
 
-
-  if (user) {
-    // Login successful
-    document.getElementById('message').textContent = `Welcome, ${user.email}!`;
-    document.getElementById('message').style.color = 'green';
-
-    // Simulate login by saving the user in sessionStorage (optional)
-    sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-
-    console.log(user.email);
-    console.log(user.password);
-
-    // Redirect to another page (optional)
-    window.location.href = 'index.html';
-  } else {
-    // Login failed
-    document.getElementById('message').textContent = 'Invalid email or password!';
-    document.getElementById('message').style.color = 'red';
-  }
-})
-.catch(error => {
-  console.error('Error:', error);
-  document.getElementById('message').textContent = 'An error occurred. Please try again later.';
-  document.getElementById('message').style.color = 'red';
-
-  });
+  
 });
