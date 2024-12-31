@@ -1,4 +1,7 @@
+
+//Variables
 $primary: #ff5722;
+$primary-text-colour: black;
 
 *{
     padding:0;
@@ -173,7 +176,7 @@ $primary: #ff5722;
 /* Sign up CSS */
 
 .btn-color{
-  background-color: #0e1c36;
+  background-color: $primary-text-colour;
   color: #fff;
   
 }
