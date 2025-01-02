@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((error) => console.error('Error fetching product data:', error));
 
 
- // Checking if the cart is empty. if it is empty im inputting a card container
+ // Checking if the cart is empty. if it is empty im inputting a card container.
  const emptyCartContainer = document.getElementById('emptyCartContainer')
  const emptyCartHTML = `
  <div class="d-flex justify-content-center align-items-center m-5" style="">
@@ -95,12 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
  function updateCartDisplay(cart) {
   if (cart.length === 0) {
-    // If the cart is empty, display the empty cart card
+    // If the cart is empty  display the empty cart card
     if (!document.getElementById('emptyCartCard')) {
       emptyCartContainer.innerHTML = emptyCartHTML;
     }
   } else {
-    // If the cart has items, remove the empty cart card if it exists
+    // If the cart has items remove the empty cart 
     const emptyCartCard = document.getElementById('emptyCartCard');
     if (emptyCartCard) {
       emptyCartCard.remove();
@@ -238,75 +238,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  //User Login form 
+  const form = document.getElementById('login-form');
+  const email = document.getElementById('Email');
+  const password = document.getElementById('password');
 
-// Following code is for the sign up 
+  console.log(email)
 
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent the default form submission
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  // Get the email and password values from the form
-  const email = document.getElementById('Email').value;
-  const password = document.getElementById('password').value;
+    const validCredentials = [
+      { email : 'user1@example.com', password: 'pass1' },
+      { email : 'user2', password: 'pass2' }
+    ];
 
-  // Call the login function with the email and password
-  login(email, password);
-});
-
-// Define an async function for login
-async function login(email, password) {
-  try {
-    // Fetch the users JSON file
-    const response = await fetch('users.json');
-
-    // Check if the response is OK
-    if (!response.ok) {
-      throw new Error('Failed to load users.json');
-    }
-
-    // Parse the JSON data
-    const users = await response.json();
-
-    // Find the user by matching email and password
-    const user = users.find(user => user.email === email && user.password === password);
-
-    // Check if the user is found
-    if (user) {
-      // Login successful
-      const messageElement = document.getElementById('message');
-      if (messageElement) {
-        messageElement.textContent = `Welcome, ${user.email}!`;
-        messageElement.style.color = 'green';
+    for (const credential of validCredentials) {
+      if (credential.email === email.value && credential.password === password.value) {
+        alert('Valid');
       } else {
-        console.error('Message element not found!');
-      }
-
-      // Save user info in sessionStorage (optional)
-      sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-
-      
-      window.location.href = 'index.html';
-    } else {
-      // Login failed
-      const messageElement = document.getElementById('message');
-      if (messageElement) {
-        messageElement.textContent = 'Invalid email or password!';
-        messageElement.style.color = 'red';
-      } else {
-        console.error('Message element not found!');
+        alert('Invalid username or password');
       }
     }
-  } catch (error) {
-    // Handle any errors
-    console.error('Error:', error);
-    const messageElement = document.getElementById('message');
-    if (messageElement) {
-      messageElement.textContent = 'An error occurred. Please try again later.';
-      messageElement.style.color = 'red';
-    } else {
-      console.error('Message element not found!');
-    }
-  }
-}
-
+  });
 
 });
