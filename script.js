@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Fetch the product data from the JSON file and render product cards
+  // Fetch the product data from the JSON file and create product cards
   fetch('products.json')
     .then((response) => response.json())
     .then((products) => {
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const button = event.target; // Get the clicked button
-    const productId = button.dataset.id; // Extract product ID
+    const productId = button.dataset.id; // get product ID
 
     // Check if the product is already in the cart
     const existingProduct = cart.find((item) => item.id === productId);
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Extract product details from the button's dataset
+    // get product details from the  dataset
     const productName = button.dataset.name;
     const productPrice = parseFloat(button.dataset.price);
     const productImage = button.dataset.image;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image: productImage,
       stock: productStock,
       description: productDescription,
-      quantity: 1, // Start with quantity 1
+      quantity: 1, // Start with quantity 1 for added up total price 
     };
 
     cart.push(cartItem);
@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const password = document.getElementById('password');
 
   console.log(email)
+
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
